@@ -1,0 +1,15 @@
+<div class="row my-3">
+    <div class="col-12 col-md-8 offset-md-2 bg-dark text-white p-3 rounded">
+        <h5 class="display-5 text-muted">Exercice Directives Structurelles</h5>
+        <hr>
+        <button class="btn btn-outline-light" (click)="onSwitchSecretShown()"><i class="bi bi-eye"></i> Voir les Secrets</button>
+        <div *ngIf="secretsShown" class="my-3">
+            <p>Vous voyez actuellement les secrets de l'univers !</p>
+            <div class="my-2" *ngFor="let date of logs; let i = index;" ngClass="text-info">
+                <div class="my-1" [ngStyle]="{ backgroundColor: i > 4 ? 'blue' : 'transparent' }" [ngClass]="{ 'text-white': i > 4 }">
+                    {{ i + ". " + date }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
